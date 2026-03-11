@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.description }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ $css := resources.Get "css/main.css" }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <link rel="icon" href="/img/hellodrinkbot-nowords.png" type="image/png">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="site-logo" href="/">
+      <img src="/img/hellodrinkbot-nowords.png" alt="Hello Drinkbot logo">
+      <span class="site-title">Hello Drinkbot!</span>
+    </a>
+    <div class="site-tagline">The Hello World of Cocktail Robotics Culture</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/posts/">Posts</a>
+      <a href="/pages/links/">Links &amp; Resources</a>
+      <a href="/pages/about/">About</a>
+      <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  {{ block "main" . }}{{ end }}
+</main>
+
+<footer>
+  <p>Hello Drinkbot! — The Hello World of Cocktail Robotics Culture</p>
+  <p style="margin-top:0.5rem;">
+    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="{{ .Site.Params.discord }}" target="_blank" rel="noopener">Discord</a> ·
+    <a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>
+  </p>
+  <p style="margin-top:0.75rem; font-size:0.72rem;">© {{ .Site.Copyright }} · Built with <a href="https://gohugo.io">Hugo</a> · Hosted on <a href="https://pages.cloudflare.com">Cloudflare Pages</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+baseURL = "https://hellodrinkbot.com/"
+languageCode = "en-us"
+title = "Hello Drinkbot!"
+copyright = "Rich Gibson"
+
+[params]
+  description = "The Hello World of Cocktail Robotics Culture"
+  author = "Rich Gibson"
+  github = "https://github.com/RichGibson/hellodrinkbot"
+  discord = "https://discord.gg/HhaduD6ag4"
+  facebook = "https://www.facebook.com/groups/602734573508700/"
+  email = "Rich.Gibson at gmail.com"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[permalinks]
+  posts = "/:year/:month/:day/:slug/"

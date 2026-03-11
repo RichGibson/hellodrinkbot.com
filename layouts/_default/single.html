@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article>
+  <div class="post-header">
+    <div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}<a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+</article>
+
+<div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+  <a href="/posts/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem;">← All posts</a>
+</div>
+{{ end }}

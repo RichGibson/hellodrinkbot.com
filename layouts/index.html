@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<section style="margin-bottom: 3rem; padding: 2rem; background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid var(--accent);">
+  <h1 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--accent); margin-bottom: 0.75rem; text-wrap: balance;">
+    Cocktail robotics made simple.
+  </h1>
+  <p style="color: var(--text-muted); max-width: 60ch;">
+    Hello Drinkbot is an open-source cocktail robot platform for makers — Raspberry Pi, peristaltic pumps, laser-cut cases, Python, and a healthy dose of radical hedonism. This is the hello world of dispensing cocktails under computer control.
+  </p>
+  <div style="margin-top: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener"
+       style="background: var(--accent); color: var(--bg); padding: 0.5em 1.1em; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em;">
+      GitHub Repo ↗
+    </a>
+    <a href="/pages/links/"
+       style="border: 1px solid var(--accent); color: var(--accent); padding: 0.5em 1.1em; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em;">
+      Links &amp; Resources
+    </a>
+  </div>
+</section>
+
+<h2 style="font-family: var(--font-display); font-size: 1rem; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;">
+  Latest Posts
+</h2>
+
+<ul class="post-list">
+  {{ range (where .Site.RegularPages "Type" "posts") }}
+  <li class="post-item">
+    <div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}<a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>
+
+{{ end }}
