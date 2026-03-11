@@ -15,6 +15,8 @@ Built with [Hugo](https://gohugo.io) and deployed to [Cloudflare Pages](https://
 
 Push to the `main` branch. Cloudflare Pages builds and deploys automatically.
 
+git add . && git commit -m "your message" && git push
+
 ## Adding a Post
 
 ```bash
