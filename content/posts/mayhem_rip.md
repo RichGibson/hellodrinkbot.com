@@ -1,5 +1,5 @@
 ---
-title: "Mayhem Rest in Piece"
+title: "Mayhem Rest in Peace"
 date: 2026-03-10T21:53:02-07:00
 draft: False
 ---
